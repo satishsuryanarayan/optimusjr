@@ -1,0 +1,103 @@
+package com.tesla;
+
+import java.util.*;
+
+/*
+    Class that represents the Floor map
+ */
+public class Floor implements IFloor {
+    private final int numRows;
+    private final int numCols;
+    private final Tile[][] matrix;
+    private Tile root;
+    private final Map<Character, Set<Tile>> teleportationMap;
+
+    public Floor(int numRows, int numCols) {
+        this.numRows = numRows;
+        this.numCols = numCols;
+        this.matrix = new Tile[numRows][numCols];
+        this.root = null;
+        this.teleportationMap = new HashMap<>();
+    }
+
+    @Override
+    public void readMap(Scanner input) {
+        for (int x = 0; x < numRows; x++) {
+            String line = input.nextLine();
+            for  (int y = 0; y < numCols; y++) {
+                char c = line.charAt(y);
+                this.matrix[x][y] = new Tile(c, x, y);
+                if (c == Constants.START) {
+                    this.root = this.matrix[x][y];
+                    this.root.setVisited(true);
+                } else if (c >= Constants.TELEPORTER_START && c <= Constants.TELEPORTER_END) {
+                    this.teleportationMap.putIfAbsent(c, new HashSet<>());
+                    this.teleportationMap.get(c).add(this.matrix[x][y]);
+                } else if (c == Constants.UNBREAKABLE)
+                    this.matrix[x][y].setVisited(true);
+            }
+        }
+
+        /*
+            Set tile neighbors to the north, south, east and west
+         */
+        for (int x = 0; x < numRows; x++) {
+            for  (int y = 0; y < numCols; y++) {
+                Tile tile = this.matrix[x][y];
+                tile.setNorth(getNorth(x, y));
+                tile.setEast(getEast(x, y));
+                tile.setWest(getWest(x, y));
+                tile.setSouth(getSouth(x, y));
+            }
+        }
+    }
+
+    @Override
+    public ITile teleport(final ITile tile) {
+        Set<Tile> tiles = this.teleportationMap.get(tile.getValue());
+        Tile result = null;
+        for (Tile n : tiles) {
+            if (!n.equals(tile)) {
+                result = n;
+                break;
+            }
+        }
+        return result;
+    }
+
+    private Tile getNorth(int x, int y) {
+        if (x - 1 < 0) {
+            return null;
+        } else {
+            return this.matrix[x - 1][y];
+        }
+    }
+
+    private Tile getEast(int x, int y) {
+        if (y + 1 > numCols - 1) {
+            return null;
+        } else {
+            return this.matrix[x][y + 1];
+        }
+    }
+
+    private Tile getWest(int x, int y) {
+        if (y - 1 < 0) {
+            return null;
+        } else {
+            return this.matrix[x][y - 1];
+        }
+    }
+
+    private Tile getSouth(int x, int y) {
+        if (x + 1 > numRows - 1) {
+            return null;
+        } else {
+            return this.matrix[x + 1][y];
+        }
+    }
+
+    public Tile getRoot() {
+        return root;
+    }
+}
