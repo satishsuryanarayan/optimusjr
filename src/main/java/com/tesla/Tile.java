@@ -1,6 +1,5 @@
 package com.tesla;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /*
@@ -8,13 +7,13 @@ import java.util.Objects;
     Each tile has a value and 4 neighbors (think of this as a QuadNode in a QuadTree)
  */
 public class Tile implements ITile {
-    private Character value;
+    private final Character value;
     private final int x;
     private final int y;
-    private Tile north;
-    private Tile east;
-    private Tile west;
-    private Tile south;
+    private ITile north;
+    private ITile east;
+    private ITile west;
+    private ITile south;
     private boolean visited;
 
     public Tile(final Character value, final int x, final int y) {
@@ -33,43 +32,39 @@ public class Tile implements ITile {
         return value;
     }
 
-    public void setValue(final Character value) {
-        this.value = value;
-    }
-
     @Override
-    public Tile getNorth() {
+    public ITile getNorth() {
         return north;
     }
 
-    public void setNorth(final Tile north) {
+    public void setNorth(final ITile north) {
         this.north = north;
     }
 
     @Override
-    public Tile getEast() {
+    public ITile getEast() {
         return east;
     }
 
-    public void setEast(final Tile east) {
+    public void setEast(final ITile east) {
         this.east = east;
     }
 
     @Override
-    public Tile getWest() {
+    public ITile getWest() {
         return west;
     }
 
-    public void setWest(final Tile west) {
+    public void setWest(final ITile west) {
         this.west = west;
     }
 
     @Override
-    public Tile getSouth() {
+    public ITile getSouth() {
         return south;
     }
 
-    public void setSouth(final Tile south) {
+    public void setSouth(final ITile south) {
         this.south = south;
     }
 

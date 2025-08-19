@@ -8,9 +8,9 @@ import java.util.*;
 public class Floor implements IFloor {
     private final int numRows;
     private final int numCols;
-    private final Tile[][] matrix;
-    private Tile root;
-    private final Map<Character, Set<Tile>> teleportationMap;
+    private final ITile[][] matrix;
+    private ITile root;
+    private final Map<Character, Set<ITile>> teleportationMap;
 
     public Floor(int numRows, int numCols) {
         this.numRows = numRows;
@@ -29,12 +29,12 @@ public class Floor implements IFloor {
                 this.matrix[x][y] = new Tile(c, x, y);
                 if (c == Constants.START) {
                     this.root = this.matrix[x][y];
-                    this.root.setVisited(true);
+                    ((Tile) this.root).setVisited(true);
                 } else if (c >= Constants.TELEPORTER_START && c <= Constants.TELEPORTER_END) {
                     this.teleportationMap.putIfAbsent(c, new HashSet<>());
                     this.teleportationMap.get(c).add(this.matrix[x][y]);
                 } else if (c == Constants.UNBREAKABLE)
-                    this.matrix[x][y].setVisited(true);
+                    ((Tile) this.matrix[x][y]).setVisited(true);
             }
         }
 
@@ -43,20 +43,20 @@ public class Floor implements IFloor {
          */
         for (int x = 0; x < numRows; x++) {
             for  (int y = 0; y < numCols; y++) {
-                Tile tile = this.matrix[x][y];
-                tile.setNorth(getNorth(x, y));
-                tile.setEast(getEast(x, y));
-                tile.setWest(getWest(x, y));
-                tile.setSouth(getSouth(x, y));
+                ITile tile = this.matrix[x][y];
+                ((Tile) tile).setNorth(getNorth(x, y));
+                ((Tile) tile).setEast(getEast(x, y));
+                ((Tile) tile).setWest(getWest(x, y));
+                ((Tile) tile).setSouth(getSouth(x, y));
             }
         }
     }
 
     @Override
     public ITile teleport(final ITile tile) {
-        Set<Tile> tiles = this.teleportationMap.get(tile.getValue());
-        Tile result = null;
-        for (Tile n : tiles) {
+        Set<ITile> tiles = this.teleportationMap.get(tile.getValue());
+        ITile result = null;
+        for (ITile n : tiles) {
             if (!n.equals(tile)) {
                 result = n;
                 break;
@@ -65,7 +65,7 @@ public class Floor implements IFloor {
         return result;
     }
 
-    private Tile getNorth(int x, int y) {
+    private ITile getNorth(int x, int y) {
         if (x - 1 < 0) {
             return null;
         } else {
@@ -73,7 +73,7 @@ public class Floor implements IFloor {
         }
     }
 
-    private Tile getEast(int x, int y) {
+    private ITile getEast(int x, int y) {
         if (y + 1 > numCols - 1) {
             return null;
         } else {
@@ -81,7 +81,7 @@ public class Floor implements IFloor {
         }
     }
 
-    private Tile getWest(int x, int y) {
+    private ITile getWest(int x, int y) {
         if (y - 1 < 0) {
             return null;
         } else {
@@ -89,7 +89,7 @@ public class Floor implements IFloor {
         }
     }
 
-    private Tile getSouth(int x, int y) {
+    private ITile getSouth(int x, int y) {
         if (x + 1 > numRows - 1) {
             return null;
         } else {
@@ -97,7 +97,7 @@ public class Floor implements IFloor {
         }
     }
 
-    public Tile getRoot() {
+    public ITile getRoot() {
         return root;
     }
 }
