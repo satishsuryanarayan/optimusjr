@@ -730,4 +730,26 @@ class RobotTest {
                 SOUTH
                 """, outputStreamCaptor.toString());
     }
+
+    @Test
+    void test21() {
+        String simulatedInput = """
+                10 10
+                ##########
+                #2  1    #
+                #        #
+                #3      $#
+                #   @    #
+                #        #
+                #   S321W#
+                #        #
+                #   E   N#
+                ##########
+                """;
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Main.run(new Scanner(System.in));
+        assertEquals("""
+                LOOP
+                """, outputStreamCaptor.toString());
+    }
 }
