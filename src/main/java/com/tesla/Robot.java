@@ -37,6 +37,9 @@ public class Robot implements IRobot {
                 nextTile = getTile(nextDirection);
             }
 
+            if (nextTile.getValue() == Constants.BREAKABLE && !breakMode)
+                return currentTile;
+
             recordPath();
 
             if (nextTile.getValue() == Constants.BREAKER)

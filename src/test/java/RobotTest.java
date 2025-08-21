@@ -752,4 +752,60 @@ class RobotTest {
                 LOOP
                 """, outputStreamCaptor.toString());
     }
+
+    @Test
+    void test22() {
+        String simulatedInput = """
+                10 10
+                ##########
+                #@       #
+                #        #
+                #        #
+                #    $   #
+                #        #
+                #    X   #
+                #   X X  #
+                #     X  #
+                ##########
+                """;
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Main.run(new Scanner(System.in));
+        assertEquals("""
+                LOOP
+                """, outputStreamCaptor.toString());
+    }
+
+    @Test
+    void test23() {
+        String simulatedInput = """
+                10 10
+                ##########
+                #@       #
+                #        #
+                #        #
+                #        #
+                #        #
+                #    X   #
+                #   X X  #
+                #    BX$ #
+                ##########
+                """;
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Main.run(new Scanner(System.in));
+        assertEquals("""
+                SOUTH
+                SOUTH
+                SOUTH
+                SOUTH
+                SOUTH
+                SOUTH
+                SOUTH
+                EAST
+                EAST
+                EAST
+                EAST
+                EAST
+                EAST
+                """, outputStreamCaptor.toString());
+    }
 }
