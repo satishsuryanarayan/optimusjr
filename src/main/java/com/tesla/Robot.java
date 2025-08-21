@@ -19,7 +19,6 @@ public class Robot implements IRobot {
         private final Direction[] compass;
         private int nextDirection;
         private final List<Direction> path;
-        private final List<ITile> tiles;
 
         public State(final IFloor floor) {
             this.floor = floor;
@@ -29,7 +28,6 @@ public class Robot implements IRobot {
             this.compass = new Direction[]{Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST};
             this.nextDirection = 0;
             this.path = new ArrayList<>();
-            this.tiles = new ArrayList<>();
         }
 
         public ITile getNext() {
@@ -58,8 +56,6 @@ public class Robot implements IRobot {
 
             currentTile = nextTile;
 
-            recordTilePath(nextTile);
-
             return nextTile;
         }
 
@@ -67,16 +63,8 @@ public class Robot implements IRobot {
             return path;
         }
 
-        public List<ITile> getTiles() {
-            return tiles;
-        }
-
         private void recordPath() {
             path.add(compass[nextDirection]);
-        }
-
-        private void recordTilePath(final ITile tile) {
-            tiles.add(tile);
         }
 
         private boolean canProceed() {
@@ -150,10 +138,8 @@ public class Robot implements IRobot {
         while (tile.getValue() != Constants.END) {
             ((Tile) tile).setVisited(true);
             tile = state.getNext();
-            if (tile.isVisited()) {
-                //System.out.println(state.getTiles());
+            if (tile.isVisited())
                 return Collections.singletonList(Direction.LOOP);
-            }
         }
         return state.getPath();
     }

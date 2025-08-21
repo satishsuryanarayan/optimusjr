@@ -66,35 +66,31 @@ public class Floor implements IFloor {
     }
 
     private ITile getNorth(int x, int y) {
-        if (x - 1 < 0) {
+        if (x - 1 < 0)
             return null;
-        } else {
+        else
             return this.matrix[x - 1][y];
-        }
     }
 
     private ITile getEast(int x, int y) {
-        if (y + 1 > numCols - 1) {
+        if (y + 1 > numCols - 1)
             return null;
-        } else {
+        else
             return this.matrix[x][y + 1];
-        }
     }
 
     private ITile getWest(int x, int y) {
-        if (y - 1 < 0) {
+        if (y - 1 < 0)
             return null;
-        } else {
+        else
             return this.matrix[x][y - 1];
-        }
     }
 
     private ITile getSouth(int x, int y) {
-        if (x + 1 > numRows - 1) {
+        if (x + 1 > numRows - 1)
             return null;
-        } else {
+        else
             return this.matrix[x + 1][y];
-        }
     }
 
     public ITile getRoot() {
