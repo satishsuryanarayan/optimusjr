@@ -16,8 +16,8 @@ public class Main {
         String[] tokens = line.split("\\s+");
         IFloor floor = new Floor(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
         floor.readMap(input);
-        IRobot robot = new Robot(floor);
-        List<Direction> path = robot.visit();
+        IRobot robot = new Robot();
+        List<Direction> path = robot.visit(floor);
         for (Direction d : path)
             System.out.println(d.name());
     }

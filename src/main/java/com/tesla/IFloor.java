@@ -7,6 +7,6 @@ import java.util.Scanner;
  */
 public interface IFloor {
     void readMap(Scanner input);
-    ITile getRoot();
+    ITile getStart();
     ITile teleport(ITile tile);
 }

@@ -22,10 +22,10 @@ public class Robot implements IRobot {
 
         public State(final IFloor floor) {
             this.floor = floor;
+            this.compass = new Direction[]{Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST};
             this.invertedMode = false;
             this.breakMode = false;
-            this.currentTile = floor.getRoot();
-            this.compass = new Direction[]{Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST};
+            this.currentTile = floor.getStart();
             this.nextDirection = 0;
             this.path = new ArrayList<>();
         }
@@ -122,17 +122,14 @@ public class Robot implements IRobot {
         }
     }
 
-    private final IFloor floor;
-
-    public Robot(final IFloor floor) {
-        this.floor = floor;
+    public Robot() {
     }
 
     /*
         Visitor that visits the Floor tiles
      */
     @Override
-    public List<Direction> visit() {
+    public List<Direction> visit(final IFloor floor) {
         State state = new State(floor);
         ITile tile = state.getNext();
         while (tile.getValue() != Constants.END) {

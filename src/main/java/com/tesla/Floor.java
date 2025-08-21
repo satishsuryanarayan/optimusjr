@@ -9,14 +9,14 @@ public class Floor implements IFloor {
     private final int numRows;
     private final int numCols;
     private final ITile[][] matrix;
-    private ITile root;
+    private ITile start;
     private final Map<Character, Set<ITile>> teleportationMap;
 
     public Floor(int numRows, int numCols) {
         this.numRows = numRows;
         this.numCols = numCols;
         this.matrix = new Tile[numRows][numCols];
-        this.root = null;
+        this.start = null;
         this.teleportationMap = new HashMap<>();
     }
 
@@ -28,8 +28,8 @@ public class Floor implements IFloor {
                 char c = line.charAt(y);
                 this.matrix[x][y] = new Tile(c, x, y);
                 if (c == Constants.START) {
-                    this.root = this.matrix[x][y];
-                    ((Tile) this.root).setVisited(true);
+                    this.start = this.matrix[x][y];
+                    ((Tile) this.start).setVisited(true);
                 } else if (c >= Constants.TELEPORTER_START && c <= Constants.TELEPORTER_END) {
                     this.teleportationMap.putIfAbsent(c, new HashSet<>());
                     this.teleportationMap.get(c).add(this.matrix[x][y]);
@@ -93,7 +93,7 @@ public class Floor implements IFloor {
             return this.matrix[x + 1][y];
     }
 
-    public ITile getRoot() {
-        return root;
+    public ITile getStart() {
+        return start;
     }
 }
