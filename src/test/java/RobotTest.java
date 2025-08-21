@@ -783,11 +783,11 @@ class RobotTest {
                 #@       #
                 #        #
                 #        #
-                #        #
+                #    $   #
                 #        #
                 #    X   #
                 #   X X  #
-                #    BX$ #
+                #    BX  #
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
@@ -806,6 +806,56 @@ class RobotTest {
                 EAST
                 EAST
                 EAST
+                EAST
+                NORTH
+                NORTH
+                NORTH
+                NORTH
+                NORTH
+                NORTH
+                NORTH
+                WEST
+                WEST
+                WEST
+                WEST
+                WEST
+                WEST
+                SOUTH
+                SOUTH
+                SOUTH
+                SOUTH
+                SOUTH
+                SOUTH
+                EAST
+                EAST
+                EAST
+                EAST
+                EAST
+                NORTH
+                NORTH
+                NORTH
+                NORTH
+                NORTH
+                WEST
+                WEST
+                WEST
+                WEST
+                SOUTH
+                SOUTH
+                SOUTH
+                SOUTH
+                EAST
+                EAST
+                EAST
+                NORTH
+                NORTH
+                NORTH
+                WEST
+                WEST
+                SOUTH
+                SOUTH
+                EAST
+                NORTH
                 """, outputStreamCaptor.toString());
     }
 }
