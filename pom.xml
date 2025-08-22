@@ -37,7 +37,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.fictionalcorp.Main</mainClass>
+                            <mainClass>com.fictionalcorp.OptimusJR</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

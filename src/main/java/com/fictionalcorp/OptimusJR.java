@@ -10,7 +10,7 @@ import java.util.Scanner;
 /*
     Driver class with the main method
  */
-public class Main {
+public class OptimusJR {
     public static void main(String[] args) {
         run(new Scanner(System.in));
     }
