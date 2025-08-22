@@ -32,29 +32,29 @@ public class Robot implements IRobot {
 
         public ITile getNext() {
             ITile nextTile = getTile(nextDirection);
-            while ((nextTile.isVisited() || (nextTile.getValue() == Constants.BREAKABLE && !breakMode)) && canProceed()) {
+            while ((nextTile.isVisited() || (nextTile.getValue() == Token.BREAKABLE && !breakMode)) && canProceed()) {
                 changeDirection();
                 nextTile = getTile(nextDirection);
             }
 
-            if (nextTile.getValue() == Constants.BREAKABLE && !breakMode)
+            if (nextTile.getValue() == Token.BREAKABLE && !breakMode)
                 return currentTile;
 
             recordPath();
 
-            if (nextTile.getValue() == Constants.BREAKER)
+            if (nextTile.getValue() == Token.BREAKER)
                 breakMode = !breakMode;
-            else if (nextTile.getValue() == Constants.INVERTER)
+            else if (nextTile.getValue() == Token.INVERTER)
                 invertedMode = !invertedMode;
-            else if (nextTile.getValue() == Constants.SOUTH)
+            else if (nextTile.getValue() == Token.SOUTH)
                 nextDirection = 0;
-            else if (nextTile.getValue() == Constants.EAST)
+            else if (nextTile.getValue() == Token.EAST)
                 nextDirection = 1;
-            else if (nextTile.getValue() == Constants.NORTH)
+            else if (nextTile.getValue() == Token.NORTH)
                 nextDirection = 2;
-            else if (nextTile.getValue() == Constants.WEST)
+            else if (nextTile.getValue() == Token.WEST)
                 nextDirection = 3;
-            else if (nextTile.getValue() >= Constants.TELEPORTER_START && nextTile.getValue() <= Constants.TELEPORTER_END)
+            else if (nextTile.getValue() >= Token.TELEPORTER_START && nextTile.getValue() <= Token.TELEPORTER_END)
                 nextTile = floor.teleport(nextTile);
 
             currentTile = nextTile;
@@ -73,34 +73,34 @@ public class Robot implements IRobot {
         private boolean canProceed() {
             ITile south = currentTile.getSouth();
             boolean southVisited = south.isVisited();
-            if (!southVisited && south.getValue() == Constants.BREAKABLE && !breakMode)
+            if (!southVisited && south.getValue() == Token.BREAKABLE && !breakMode)
                 southVisited = true;
 
-            if (currentTile.getValue() == Constants.SOUTH && southVisited)
+            if (currentTile.getValue() == Token.SOUTH && southVisited)
                 return false;
 
             ITile east = currentTile.getEast();
             boolean eastVisited = east.isVisited();
-            if (!eastVisited && east.getValue() == Constants.BREAKABLE && !breakMode)
+            if (!eastVisited && east.getValue() == Token.BREAKABLE && !breakMode)
                 eastVisited = true;
 
-            if (currentTile.getValue() == Constants.EAST && eastVisited)
+            if (currentTile.getValue() == Token.EAST && eastVisited)
                 return false;
 
             ITile north = currentTile.getNorth();
             boolean northVisited = north.isVisited();
-            if (!northVisited && north.getValue() == Constants.BREAKABLE && !breakMode)
+            if (!northVisited && north.getValue() == Token.BREAKABLE && !breakMode)
                 northVisited = true;
 
-            if (currentTile.getValue() == Constants.NORTH && northVisited)
+            if (currentTile.getValue() == Token.NORTH && northVisited)
                 return false;
 
             ITile west = currentTile.getWest();
             boolean westVisited = west.isVisited();
-            if (!westVisited && west.getValue() == Constants.BREAKABLE && !breakMode)
+            if (!westVisited && west.getValue() == Token.BREAKABLE && !breakMode)
                 westVisited = true;
 
-            if (currentTile.getValue() == Constants.WEST && westVisited)
+            if (currentTile.getValue() == Token.WEST && westVisited)
                 return false;
 
             return (!(southVisited && eastVisited && northVisited && westVisited));
@@ -135,7 +135,7 @@ public class Robot implements IRobot {
     public List<Direction> visit(final IFloor floor) {
         State state = new State(floor);
         ITile tile = state.getNext();
-        while (tile.getValue() != Constants.END) {
+        while (tile.getValue() != Token.END) {
             ((Tile) tile).setVisited(true);
             tile = state.getNext();
             if (tile.isVisited())

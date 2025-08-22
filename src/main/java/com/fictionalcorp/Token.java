@@ -1,6 +1,6 @@
 package com.fictionalcorp;
 
-public class Constants {
+public class Token {
     public static final Character UNBREAKABLE = '#';
     public static final Character BREAKABLE = 'X';
     public static final Character START = '@';

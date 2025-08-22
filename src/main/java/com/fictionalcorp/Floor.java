@@ -27,13 +27,13 @@ public class Floor implements IFloor {
             for  (int y = 0; y < numCols; y++) {
                 char c = line.charAt(y);
                 this.matrix[x][y] = new Tile(c, x, y);
-                if (c == Constants.START) {
+                if (c == Token.START) {
                     this.start = this.matrix[x][y];
                     ((Tile) this.start).setVisited(true);
-                } else if (c >= Constants.TELEPORTER_START && c <= Constants.TELEPORTER_END) {
+                } else if (c >= Token.TELEPORTER_START && c <= Token.TELEPORTER_END) {
                     this.teleportationMap.putIfAbsent(c, new HashSet<>());
                     this.teleportationMap.get(c).add(this.matrix[x][y]);
-                } else if (c == Constants.UNBREAKABLE)
+                } else if (c == Token.UNBREAKABLE)
                     ((Tile) this.matrix[x][y]).setVisited(true);
             }
         }
