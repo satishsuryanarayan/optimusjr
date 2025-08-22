@@ -4,8 +4,8 @@ Read the problem statement [here](problem.txt).
 # INSTRUCTIONS
 ### Requires JDK 24 and Maven 3.9.11
 
-#### Unzip the contents of the zip
-`unzip optimusjr.zip`
+#### Clone the repository
+`git clone https://github.com/satishsuryanarayan/optimusjr.git`
 
 #### Change directory to the folder containing pom.xml
 `cd optimusjr`
