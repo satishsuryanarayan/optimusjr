@@ -57,6 +57,11 @@ public class Floor implements IFloor {
     }
 
     @Override
+    public ITile getStart() {
+        return start;
+    }
+
+    @Override
     public ITile teleport(final ITile tile) {
         Set<ITile> tiles = this.teleportationMap.get(tile.getValue());
         ITile result = null;
@@ -95,9 +100,5 @@ public class Floor implements IFloor {
             return null;
         else
             return this.matrix[x + 1][y];
-    }
-
-    public ITile getStart() {
-        return start;
     }
 }
