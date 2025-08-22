@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RobotTest {
+class OptimusJrTest {
     private final InputStream originalSystemIn = System.in;
     private final PrintStream originalSystemOut = System.out;
     private ByteArrayOutputStream outputStreamCaptor;
