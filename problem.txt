@@ -29,7 +29,7 @@ direction and mode properties. Teleporters, if present, will always exist in pai
 10. Finally, the space characters are blank areas on the map having no special effects.
 
 Input (see examples below)
------
+--------------------------
 The only input is text consumed from STDIN containing a 2-dimensional grid of characters (the map).
 The edges of the map are always unbreakable ‘#’ obstacles.
 The map always has a starting point ‘@‘ and a destination ‘$‘.
@@ -40,7 +40,7 @@ the only possible characters (you do not need to check for invalid input): #, X,
 3, 4, 5, 6, 7, 8, 9 and space character.
 
 Output (see examples below)
-------
+---------------------------
 The only output is text written to STDOUT. It should be the sequence of moves (NORTH, SOUTH, EAST or
 WEST, 1 per line) taken by Optimus Jr as it travels from its starting point to the destination.
 If Optimus Jr cannot reach its destination due to an indefinite loop, then the program must output only LOOP.
@@ -55,6 +55,7 @@ Input
 #X   #
 ######
 ######
+
 Expected Output
 SOUTH
 EAST
@@ -62,8 +63,9 @@ NORTH
 EAST
 EAST
 
+
+
 Input
-10 10
 10 10
 ##########
 #        #
@@ -75,6 +77,7 @@ Input
 #        #
 #E     N #
 ##########
+
 Expected Output
 SOUTH
 SOUTH
@@ -96,6 +99,8 @@ WEST
 WEST
 SOUTH
 SOUTH
+
+
 
 Input
 10 10
@@ -109,6 +114,7 @@ Input
 #        #
 #        #
 ##########
+
 Expected Output
 SOUTH
 SOUTH
@@ -121,8 +127,9 @@ EAST
 EAST
 EAST
 
+
+
 Input
-10 10
 10 10
 ##########
 #    I   #
@@ -134,6 +141,7 @@ Input
 #        #
 #        #
 ##########
+
 Expected Output
 SOUTH
 SOUTH
@@ -162,6 +170,8 @@ EAST
 EAST
 SOUTH
 SOUTH
+
+
 
 Input
 10 10
@@ -175,6 +185,7 @@ Input
 #        #
 #    1  $#
 ##########
+
 Expected Output
 SOUTH
 SOUTH
@@ -194,6 +205,8 @@ SOUTH
 SOUTH
 SOUTH
 
+
+
 Input
 5 5
 #####
@@ -201,5 +214,6 @@ Input
 # $ #
 # @ #
 #####
+
 Expected Output
 LOOP
