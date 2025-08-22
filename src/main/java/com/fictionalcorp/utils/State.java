@@ -6,6 +6,10 @@ import com.fictionalcorp.ITile;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    Utility class representing the state of a Robot as it visits the floor
+ */
+
 public final class State {
     private final IFloor floor;
     private boolean invertedMode;
