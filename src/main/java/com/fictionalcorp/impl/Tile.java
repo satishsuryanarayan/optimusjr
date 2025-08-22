@@ -1,4 +1,6 @@
-package com.fictionalcorp;
+package com.fictionalcorp.impl;
+
+import com.fictionalcorp.ITile;
 
 import java.util.Objects;
 

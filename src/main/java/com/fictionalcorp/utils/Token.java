@@ -1,4 +1,4 @@
-package com.fictionalcorp;
+package com.fictionalcorp.utils;
 
 public class Token {
     public static final Character UNBREAKABLE = '#';

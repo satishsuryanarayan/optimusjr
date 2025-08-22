@@ -1,5 +1,7 @@
 package com.fictionalcorp;
 
+import com.fictionalcorp.utils.Direction;
+
 import java.util.List;
 
 /*

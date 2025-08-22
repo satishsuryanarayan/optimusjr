@@ -1,5 +1,9 @@
 package com.fictionalcorp;
 
+import com.fictionalcorp.impl.Floor;
+import com.fictionalcorp.impl.Robot;
+import com.fictionalcorp.utils.Direction;
+
 import java.util.List;
 import java.util.Scanner;
 

@@ -1,4 +1,8 @@
-package com.fictionalcorp;
+package com.fictionalcorp.impl;
+
+import com.fictionalcorp.*;
+import com.fictionalcorp.utils.Direction;
+import com.fictionalcorp.utils.Token;
 
 import java.util.*;
 
