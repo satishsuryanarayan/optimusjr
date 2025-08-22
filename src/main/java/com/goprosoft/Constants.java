@@ -1,4 +1,4 @@
-package com.tesla;
+package com.goprosoft;
 
 public class Constants {
     public static final Character UNBREAKABLE = '#';

@@ -1,4 +1,4 @@
-package com.tesla;
+package com.goprosoft;
 
 import java.util.Objects;
 

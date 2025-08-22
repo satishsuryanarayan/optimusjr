@@ -1,4 +1,4 @@
-package com.tesla;
+package com.goprosoft;
 
 /*
     Interface representing a Floor tile
