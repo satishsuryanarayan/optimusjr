@@ -1,4 +1,4 @@
-package com.goprosoft;
+package com.fictionalcorp;
 
 /*
     Interface representing a Floor tile

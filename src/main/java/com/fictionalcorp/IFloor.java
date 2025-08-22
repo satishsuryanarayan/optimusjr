@@ -1,4 +1,4 @@
-package com.goprosoft;
+package com.fictionalcorp;
 
 import java.util.Scanner;
 

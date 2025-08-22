@@ -37,7 +37,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.goprosoft.Main</mainClass>
+                            <mainClass>com.fictionalcorp.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -1,4 +1,4 @@
-package com.goprosoft;
+package com.fictionalcorp;
 
 public class Constants {
     public static final Character UNBREAKABLE = '#';
