@@ -1,4 +1,4 @@
-import com.fictionalcorp.OptimusJR;
+import com.fictionalcorp.OptimusJr;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,7 +39,7 @@ class RobotTest {
                 ######
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 SOUTH
                 EAST
@@ -65,7 +65,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 SOUTH
                 SOUTH
@@ -106,7 +106,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 SOUTH
                 SOUTH
@@ -137,7 +137,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 SOUTH
                 SOUTH
@@ -185,7 +185,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 SOUTH
                 SOUTH
@@ -218,7 +218,7 @@ class RobotTest {
                 #####
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -235,7 +235,7 @@ class RobotTest {
                 #####
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 EAST
                 NORTH
@@ -261,7 +261,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 SOUTH
                 SOUTH
@@ -313,7 +313,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -335,7 +335,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -357,7 +357,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 EAST
                 EAST
@@ -401,7 +401,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 EAST
                 EAST
@@ -445,7 +445,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -467,7 +467,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 EAST
                 EAST
@@ -517,7 +517,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -539,7 +539,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 EAST
                 EAST
@@ -600,7 +600,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -622,7 +622,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 EAST
                 EAST
@@ -681,7 +681,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -703,7 +703,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 SOUTH
                 SOUTH
@@ -747,7 +747,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -769,7 +769,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 LOOP
                 """, outputStreamCaptor.toString());
@@ -791,7 +791,7 @@ class RobotTest {
                 ##########
                 """;
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
-        OptimusJR.run(new Scanner(System.in));
+        OptimusJr.run(new Scanner(System.in));
         assertEquals("""
                 SOUTH
                 SOUTH
