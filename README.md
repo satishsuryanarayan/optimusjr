@@ -1,5 +1,7 @@
-# INSTRUCTIONS
+# PROBLEM
+Read the problem statement [here](problem.txt).
 
+# INSTRUCTIONS
 ### Requires JDK 24 and Maven 3.9.11
 
 #### Unzip the contents of the zip
