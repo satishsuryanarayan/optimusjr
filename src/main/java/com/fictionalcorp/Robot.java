@@ -113,7 +113,7 @@ public class Robot implements IRobot {
                 nextDirection = (nextDirection - 1 < 0) ? compass.length - 1 : nextDirection - 1;
         }
 
-        private ITile getTile(int direction) {
+        private ITile getTile(final int direction) {
             if (direction == 0)
                 return currentTile.getSouth();
             else if (direction == 1)
